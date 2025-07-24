@@ -8,26 +8,42 @@ All colors MUST be HSL.
 
 @layer base {
   :root {
-    --background: 0 0% 100%;
-    --foreground: 222.2 84% 4.9%;
+    --background: 350 20% 99%;
+    --foreground: 200 15% 8%;
 
     --card: 0 0% 100%;
-    --card-foreground: 222.2 84% 4.9%;
+    --card-foreground: 200 15% 8%;
 
     --popover: 0 0% 100%;
-    --popover-foreground: 222.2 84% 4.9%;
+    --popover-foreground: 200 15% 8%;
 
-    --primary: 222.2 47.4% 11.2%;
-    --primary-foreground: 210 40% 98%;
+    /* Calming green-blue theme for mental health */
+    --primary: 165 85% 35%;
+    --primary-foreground: 0 0% 98%;
 
-    --secondary: 210 40% 96.1%;
-    --secondary-foreground: 222.2 47.4% 11.2%;
+    --secondary: 165 25% 90%;
+    --secondary-foreground: 165 85% 25%;
 
-    --muted: 210 40% 96.1%;
-    --muted-foreground: 215.4 16.3% 46.9%;
+    --muted: 165 15% 95%;
+    --muted-foreground: 200 10% 45%;
 
-    --accent: 210 40% 96.1%;
-    --accent-foreground: 222.2 47.4% 11.2%;
+    --accent: 45 85% 60%;
+    --accent-foreground: 200 15% 8%;
+
+    /* Mental health specific colors */
+    --calm: 165 50% 85%;
+    --warm: 45 85% 60%;
+    --trust: 210 85% 60%;
+    --hope: 120 40% 60%;
+
+    /* Gradients for visual appeal */
+    --gradient-primary: linear-gradient(135deg, hsl(var(--primary)), hsl(var(--trust)));
+    --gradient-calm: linear-gradient(180deg, hsl(var(--calm)), hsl(var(--background)));
+    --gradient-warm: linear-gradient(135deg, hsl(var(--warm)), hsl(var(--accent)));
+
+    /* Shadows for depth */
+    --shadow-gentle: 0 4px 20px hsl(var(--primary) / 0.1);
+    --shadow-focus: 0 8px 30px hsl(var(--trust) / 0.15);
 
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 210 40% 98%;
