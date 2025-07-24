@@ -125,8 +125,11 @@ export const RiskAssessment: React.FC<RiskAssessmentProps> = ({ onComplete }) =>
       });
     }
 
-    setIsComplete(true);
-    onComplete?.(totalScore, riskLevel);
+    // Add a small delay to ensure state updates properly
+    setTimeout(() => {
+      setIsComplete(true);
+      onComplete?.(totalScore, riskLevel);
+    }, 100);
   };
 
   const getRiskLevelInfo = () => {
@@ -167,14 +170,14 @@ export const RiskAssessment: React.FC<RiskAssessmentProps> = ({ onComplete }) =>
     const riskInfo = getRiskLevelInfo();
     const IconComponent = riskInfo.icon;
     
-    return (
-      <Card className="w-full max-w-2xl mx-auto">
-        <CardHeader className="text-center">
-          <CardTitle className="flex items-center justify-center gap-2">
-            <Heart className="w-6 h-6 text-primary" />
-            Assessment Complete
-          </CardTitle>
-        </CardHeader>
+  return (
+    <Card className="w-full max-w-2xl mx-auto card-gradient glow-on-hover fade-in-up">
+      <CardHeader className="text-center">
+        <CardTitle className="flex items-center justify-center gap-2">
+          <Heart className="w-6 h-6 text-primary" />
+          Assessment Complete
+        </CardTitle>
+      </CardHeader>
         <CardContent className="space-y-6">
           <div className="text-center">
             <Badge variant={riskInfo.color as any} className="mb-4">
@@ -216,7 +219,7 @@ export const RiskAssessment: React.FC<RiskAssessmentProps> = ({ onComplete }) =>
   const currentAnswer = answers[question.id];
 
   return (
-    <Card className="w-full max-w-2xl mx-auto">
+    <Card className="w-full max-w-2xl mx-auto card-gradient glow-on-hover">
       <CardHeader>
         <CardTitle className="flex items-center justify-between">
           <span>Mental Health Assessment</span>

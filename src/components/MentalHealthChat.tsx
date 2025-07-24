@@ -95,32 +95,38 @@ export const MentalHealthChat: React.FC = () => {
     };
   };
 
-  // Generate AI response
-  const generateResponse = async (userMessage: string, analysis: SentimentAnalysis): Promise<string> => {
-    // Simulate AI response generation - in production, use a proper mental health chatbot model
-    const responses = {
-      high: [
-        "I'm really concerned about what you're going through. These feelings are serious, and I want you to know that you're not alone. Please consider reaching out to a mental health professional immediately. In Kenya, you can call the Kenya Red Cross helpline at 1199.",
-        "What you're experiencing sounds very difficult. It's important to get professional help right away. Please don't hesitate to contact emergency services or visit the nearest health facility. Your life matters, and there are people who want to help."
-      ],
-      medium: [
-        "I hear that you're struggling, and that takes courage to share. These feelings are valid, and it's okay to not be okay sometimes. Have you considered talking to someone you trust about how you're feeling?",
-        "It sounds like you're going through a tough time. Remember that seeking help is a sign of strength, not weakness. There are counselors and support groups that can help you work through these feelings."
-      ],
-      low: [
-        "Thank you for sharing with me. I'm here to listen. What's been on your mind lately?",
-        "I appreciate your openness. It's normal to have ups and downs. What would help you feel better right now?",
-        "That sounds challenging. How long have you been feeling this way?"
-      ]
-    };
-
-    if (analysis.riskLevel === 'high') {
-      return responses.high[Math.floor(Math.random() * responses.high.length)];
-    } else if (analysis.riskLevel === 'medium') {
-      return responses.medium[Math.floor(Math.random() * responses.medium.length)];
-    } else {
-      return responses.low[Math.floor(Math.random() * responses.low.length)];
+  // Generate AI response with improved mental health support
+  const generateResponse = (message: string): string => {
+    const lowerMessage = message.toLowerCase();
+    
+    // Detect high-risk content - expanded for better detection
+    const riskKeywords = ['suicide', 'kill myself', 'end it all', 'hurt myself', 'die', 'death', 'poison', 'overdose', 'jump', 'hanging', 'cut myself', 'self harm', 'want to disappear', 'better off dead', 'no point living'];
+    if (riskKeywords.some(keyword => lowerMessage.includes(keyword))) {
+      return "I'm very concerned about what you're sharing. These thoughts can feel overwhelming, but please know that you matter and your life has value. You're not alone in this struggle. Please reach out for immediate help: Emergency (999), Kenya Red Cross (1199), or Befrienders Kenya (0722 178 177). There are people who care and want to support you through this difficult time.";
     }
+
+    // Depression indicators
+    if (lowerMessage.includes('depressed') || lowerMessage.includes('hopeless') || lowerMessage.includes('empty') || lowerMessage.includes('worthless')) {
+      return "I hear that you're going through a really difficult time right now. Depression can make everything feel heavy and overwhelming. Please remember that these feelings, while very real, are not permanent. You deserve support and care. Have you been able to talk to anyone about how you're feeling?";
+    }
+
+    // Positive sentiment responses
+    if (lowerMessage.includes('happy') || lowerMessage.includes('good') || lowerMessage.includes('great') || lowerMessage.includes('better')) {
+      return "I'm glad to hear you're feeling positive! It's wonderful when we can recognize and appreciate good moments. What's been contributing to these positive feelings? It's important to celebrate these moments.";
+    }
+
+    // Anxiety/stress responses
+    if (lowerMessage.includes('anxious') || lowerMessage.includes('worried') || lowerMessage.includes('stressed') || lowerMessage.includes('panic')) {
+      return "It sounds like you're dealing with some anxiety right now. That can feel really overwhelming and scary. Try taking slow, deep breaths - in for 4 counts, hold for 4, out for 4. Remember that anxiety is temporary and you can get through this. Would you like to talk about what's causing these feelings?";
+    }
+
+    // Sleep issues
+    if (lowerMessage.includes('sleep') || lowerMessage.includes('insomnia') || lowerMessage.includes('tired')) {
+      return "Sleep problems can really affect how we feel during the day. It's frustrating when our minds won't let us rest. Have you noticed any patterns in what might be keeping you awake? Sometimes establishing a calming bedtime routine can help.";
+    }
+
+    // Default supportive response
+    return "Thank you for sharing that with me. I'm here to listen and support you. Your feelings are valid, and it's okay to not be okay sometimes. Remember that reaching out like this shows strength. Is there anything specific you'd like to talk about today?";
   };
 
   const handleSendMessage = async () => {
@@ -142,7 +148,7 @@ export const MentalHealthChat: React.FC = () => {
       const analysis = await analyzeSentiment(inputMessage);
       
       // Generate AI response
-      const response = await generateResponse(inputMessage, analysis);
+      const response = generateResponse(inputMessage);
       
       const botMessage: Message = {
         id: (Date.now() + 1).toString(),
@@ -192,10 +198,10 @@ export const MentalHealthChat: React.FC = () => {
   };
 
   return (
-    <Card className="w-full max-w-4xl mx-auto h-[600px] flex flex-col">
-      <CardHeader className="bg-gradient-to-r from-primary to-trust text-primary-foreground">
+    <Card className="w-full max-w-4xl mx-auto h-[600px] flex flex-col card-gradient glow-on-hover fade-in-scale">
+      <CardHeader className="bg-gradient-to-r from-primary to-trust text-primary-foreground rounded-t-lg">
         <CardTitle className="flex items-center gap-2">
-          <Heart className="w-6 h-6" />
+          <Heart className="w-6 h-6 pulse-glow" />
           Mental Health Support - Msaada wa Afya ya Akili
         </CardTitle>
         <p className="text-sm opacity-90">

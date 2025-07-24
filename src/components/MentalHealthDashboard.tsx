@@ -67,12 +67,12 @@ export const MentalHealthDashboard: React.FC = () => {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-calm to-background p-4">
+    <div className="min-h-screen p-4">
       <div className="max-w-7xl mx-auto space-y-6">
         {/* Header */}
-        <div className="text-center space-y-4">
+        <div className="text-center space-y-4 fade-in-up">
           <div className="flex items-center justify-center gap-3">
-            <Heart className="w-8 h-8 text-primary" />
+            <Heart className="w-8 h-8 text-primary breathing-animation" />
             <h1 className="text-4xl font-bold bg-gradient-to-r from-primary to-trust bg-clip-text text-transparent">
               Afya Akili
             </h1>
@@ -81,15 +81,15 @@ export const MentalHealthDashboard: React.FC = () => {
             Mental Health Support for Kenyan Youth • Msaada wa Afya ya Akili kwa Vijana wa Kenya
           </p>
           <div className="flex flex-wrap justify-center gap-2">
-            <Badge variant="outline" className="bg-background/50">
+            <Badge variant="outline" className="glass-effect glow-on-hover">
               <Globe className="w-3 h-3 mr-1" />
               Available 24/7
             </Badge>
-            <Badge variant="outline" className="bg-background/50">
+            <Badge variant="outline" className="glass-effect glow-on-hover">
               <Shield className="w-3 h-3 mr-1" />
               Anonymous & Private
             </Badge>
-            <Badge variant="outline" className="bg-background/50">
+            <Badge variant="outline" className="glass-effect glow-on-hover">
               <Smartphone className="w-3 h-3 mr-1" />
               Mobile Optimized
             </Badge>
@@ -97,7 +97,7 @@ export const MentalHealthDashboard: React.FC = () => {
         </div>
 
         {/* Crisis Alert */}
-        <Alert variant="destructive" className="max-w-4xl mx-auto">
+        <Alert variant="destructive" className="max-w-4xl mx-auto pulse-glow fade-in-scale">
           <AlertTriangle className="h-4 w-4" />
           <AlertDescription>
             <strong>Crisis Support:</strong> If you're having thoughts of suicide or immediate danger, 
@@ -131,7 +131,7 @@ export const MentalHealthDashboard: React.FC = () => {
 
           <TabsContent value="overview" className="space-y-6">
             {/* Welcome Section */}
-            <Card className="max-w-4xl mx-auto">
+            <Card className="max-w-4xl mx-auto card-gradient glow-on-hover fade-in-scale">
               <CardHeader className="text-center">
                 <CardTitle className="text-2xl">Welcome to Your Mental Health Journey</CardTitle>
                 <p className="text-muted-foreground">
@@ -149,40 +149,40 @@ export const MentalHealthDashboard: React.FC = () => {
                 )}
 
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-                  <Card className="bg-gradient-to-br from-primary/10 to-trust/10 border-primary/20">
+                  <Card className="card-gradient glow-on-hover fade-in-up border-primary/20">
                     <CardContent className="p-6 text-center">
-                      <ClipboardCheck className="w-12 h-12 text-primary mx-auto mb-4" />
+                      <ClipboardCheck className="w-12 h-12 text-primary mx-auto mb-4 breathing-animation" />
                       <h3 className="text-lg font-semibold mb-2">Mental Health Assessment</h3>
                       <p className="text-sm text-muted-foreground mb-4">
                         Take a confidential screening to understand your mental health status
                       </p>
-                      <Button onClick={() => setActiveTab('assessment')} className="w-full">
+                      <Button onClick={() => setActiveTab('assessment')} className="w-full glow-on-hover">
                         Start Assessment
                       </Button>
                     </CardContent>
                   </Card>
 
-                  <Card className="bg-gradient-to-br from-warm/10 to-accent/10 border-warm/20">
+                  <Card className="card-gradient glow-on-hover fade-in-up border-warm/20" style={{ animationDelay: '0.1s' }}>
                     <CardContent className="p-6 text-center">
-                      <MessageCircle className="w-12 h-12 text-warm mx-auto mb-4" />
+                      <MessageCircle className="w-12 h-12 text-warm mx-auto mb-4 breathing-animation" />
                       <h3 className="text-lg font-semibold mb-2">AI Support Chat</h3>
                       <p className="text-sm text-muted-foreground mb-4">
                         Talk to our AI counselor for emotional support and guidance
                       </p>
-                      <Button onClick={startConversation} variant="secondary" className="w-full">
+                      <Button onClick={startConversation} variant="secondary" className="w-full glow-on-hover">
                         Start Conversation
                       </Button>
                     </CardContent>
                   </Card>
 
-                  <Card className="bg-gradient-to-br from-hope/10 to-trust/10 border-hope/20">
+                  <Card className="card-gradient glow-on-hover fade-in-up border-hope/20" style={{ animationDelay: '0.2s' }}>
                     <CardContent className="p-6 text-center">
-                      <BookOpen className="w-12 h-12 text-hope mx-auto mb-4" />
+                      <BookOpen className="w-12 h-12 text-hope mx-auto mb-4 breathing-animation" />
                       <h3 className="text-lg font-semibold mb-2">Local Resources</h3>
                       <p className="text-sm text-muted-foreground mb-4">
                         Find mental health professionals and support services in Kenya
                       </p>
-                      <Button onClick={accessResources} variant="outline" className="w-full">
+                      <Button onClick={accessResources} variant="outline" className="w-full glow-on-hover">
                         Browse Resources
                       </Button>
                     </CardContent>
