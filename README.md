@@ -1,73 +1,71 @@
-# Welcome to your Lovable project
+# Kenya Mindful Voice 🌍💬
 
-## Project info
+**AI-Powered Mental Health Support for Kenyan Youth**
 
-**URL**: https://lovable.dev/projects/de7764b1-6752-4df4-9b45-7148a4f7ef6e
+Kenya Mindful Voice is a compassionate, culturally aware, and accessible digital platform offering 24/7 mental health support for underserved youth in Kenya. Built with modern AI technologies and a mobile-first design, it ensures anonymous and stigma-free support.
 
-## How can I edit this code?
+---
 
-There are several ways of editing your application.
+## 🧠 Core Features
 
-**Use Lovable**
+- 🤖 Anonymous AI chatbot for mental health support  
+- 🌐 Offline-first & mobile-optimized design  
+- 💬 Local language support (Swahili + English)  
+- 🔒 Privacy-first and stigma-sensitive interface  
 
-Simply visit the [Lovable Project](https://lovable.dev/projects/de7764b1-6752-4df4-9b45-7148a4f7ef6e) and start prompting.
+---
 
-Changes made via Lovable will be committed automatically to this repo.
+## 🚀 Getting Started
 
-**Use your preferred IDE**
+### Requirements:
+- Node.js & npm  
+- Modern browser  
 
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
+### Installation:
 
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
+```bash
+# Clone the repository
+git clone <your-git-url>
 
-Follow these steps:
+# Navigate to the project folder
+cd kenya-mindful-voice
 
-```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
+# Install dependencies
+npm install
 
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
-
-# Step 3: Install the necessary dependencies.
-npm i
-
-# Step 4: Start the development server with auto-reloading and an instant preview.
+# Start the development server
 npm run dev
-```
 
-**Edit a file directly in GitHub**
 
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
+⚙️ Tech Stack
 
-**Use GitHub Codespaces**
+    Frontend: Vite + React + TypeScript
 
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
+    Styling: Tailwind CSS, shadcn/ui
 
-## What technologies are used for this project?
+    Deployment: vercel Platform
 
-This project is built with:
+    AI Layer: (Optional) OpenAI, LangChain, etc.
 
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
+📁 Folder Structure
 
-## How can I deploy this project?
+kenya-mindful-voice/
+├── public/           # Static assets
+├── src/              # Source code (React components, pages)
+├── app.py            # Flask backend (if used)
+├── index.html
+├── README.md
+└── package.json
 
-Simply open [Lovable](https://lovable.dev/projects/de7764b1-6752-4df4-9b45-7148a4f7ef6e) and click on Share -> Publish.
+👩🏽‍💻 Author
 
-## Can I connect a custom domain to my Lovable project?
+Cynthia Akinyi – PLP Innovation Challenge 2025 🚀
+Empowering youth mental wellness with tech.
+📢 Live Demo
 
-Yes, you can!
 
-To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
+📬 Contributing or Feedback?
 
-Read more here: [Setting up a custom domain](https://docs.lovable.dev/tips-tricks/custom-domain#step-by-step-guide)
+Feel free to open issues or reach out with feedback.
+
+ 💚 "Mental health is not a luxury — it’s a right.
